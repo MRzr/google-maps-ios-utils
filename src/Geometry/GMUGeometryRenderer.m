@@ -271,6 +271,9 @@ static NSString *const kStyleMapDefaultState = @"normal";
   if ([container isKindOfClass:[GMUPlacemark class]]) {
     GMUPlacemark *placemark = container;
     poly.title = placemark.title;
+  } else if ([container isKindOfClass:[GMUFeature class]]) { //Here check if is feature...
+      GMUFeature *feature = container; //Convert to feature
+      poly.userData = feature.properties; //Set userData with properties
   }
   poly.map = _map;
   [_mapOverlays addObject:poly];
