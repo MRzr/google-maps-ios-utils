@@ -275,7 +275,7 @@ static NSString *const kStyleMapDefaultState = @"normal";
       GMUFeature *feature = container; //Convert to feature
       poly.userData = feature.properties; //Set userData with properties
   }
-    poly.isTappable = true;
+    poly.tappable = YES;
   poly.map = _map;
   [_mapOverlays addObject:poly];
 }
